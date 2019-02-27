@@ -12,13 +12,29 @@ namespace VOTING_SYSTEM_SERVER
     [ServiceContract]
     public interface IVotingSystem
     {
-        [WebGet(UriTemplate = "/{value}")]
-        [OperationContract]
-        string GetData(int value);
+        //[WebGet(UriTemplate = "/{value}")]
+        //[OperationContract]
+        //string GetData(int value);
 
-        [WebInvoke(Method = "POST")]
+        [WebGet(UriTemplate = "/candidate/{id}")]
+        [OperationContract]
+        string GetCandidateInfo(string id);
+
+        [WebGet(UriTemplate = "/candidates")]
+        [OperationContract]
+        string GetCandidatesList();
+
+        [WebInvoke(Method = "POST", RequestFormat = WebMessageFormat.Json)]
         [OperationContract]
         string AddUser(string user);
+
+        [WebGet(UriTemplate = "/")]
+        [OperationContract]
+        string Login(string data);
+
+        [WebInvoke(Method = "POST", RequestFormat = WebMessageFormat.Json)]
+        [OperationContract]
+        void SetVoiceForCandidate(string data);
 
         //[OperationContract]
         //CompositeType GetDataUsingDataContract(CompositeType composite);
