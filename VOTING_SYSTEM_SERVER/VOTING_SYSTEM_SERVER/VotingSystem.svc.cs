@@ -18,6 +18,26 @@ namespace VOTING_SYSTEM_SERVER
     // ПРИМЕЧАНИЕ. Чтобы запустить клиент проверки WCF для тестирования службы, выберите элементы Service1.svc или Service1.svc.cs в обозревателе решений и начните отладку.
     public class VotingSystem : IVotingSystem
     {   
+        public string CreateVoting(string data)
+        {
+            using (voting_systemEntities db = new voting_systemEntities())
+            {
+                Voting voting = JsonConvert.DeserializeObject<Voting>(data);
+                var Votings = db.Votings;
+
+                Votings.Add(voting);
+                try
+                {
+                    db.SaveChanges();
+                    return null;
+                }
+                catch(DbEntityValidationException e)
+                {
+                    return e.Message;
+                }
+            }                
+        }
+
         public string AddUser(string userData)
         {
             using (voting_systemEntities db = new voting_systemEntities())
@@ -28,8 +48,8 @@ namespace VOTING_SYSTEM_SERVER
                 try {
                     users.Add(user);
                     db.SaveChanges();
-                    
-                    return "Успешно! Пользователь добавлен.";
+
+                    return null;
                 }
                 catch(DbEntityValidationException e)
                 {
@@ -62,6 +82,33 @@ namespace VOTING_SYSTEM_SERVER
 
                 db.SaveChanges();
             }
+        }
+
+        public string GetVoicesCountInVoting(string data)
+        {
+            //TODO: Возможно, будет метод который делает голосование открытым или закрытым
+            using (voting_systemEntities db = new voting_systemEntities())
+            {
+                var Candidate_Voting = db.Candidate_Voting;
+                CountVotingResponce parseData = JsonConvert.DeserializeObject<CountVotingResponce>(data);
+                int idVoting = parseData.Voting;
+                Bulletin Bulletin;
+                int count = 0;
+
+                var Candidate_VotingList = Candidate_Voting.Where((a) => a.Voting_ID == idVoting);
+
+                foreach(Candidate_Voting candidate_voting in Candidate_VotingList)
+                {
+                    Bulletin = (Bulletin)db.Bulletins.Where((a) => a.Candidate_Voting == candidate_voting);
+                    if (Bulletin.Vote != 0)
+                    {
+                        count++;
+                    }
+                }
+
+                return "" + count;
+            }
+            
         }
 
         public string Login(string userData)
@@ -136,7 +183,7 @@ namespace VOTING_SYSTEM_SERVER
             return sBuilder.ToString();
         }
 
-        public static string CreateRandomString(int length)
+        private static string CreateRandomString(int length)
         {
             var result = new char[length];
             var r = new Random();
@@ -148,6 +195,8 @@ namespace VOTING_SYSTEM_SERVER
             }
             return new string(result);
         }
+
+        
 
         // { Name: "Иван", PassportSeries: 222, PassportNumber: 23124, WhoGives: "me", WhenGives: "01.01.2015", isAdmin: true, Password: 123456, Token: "" }
 
@@ -171,4 +220,10 @@ namespace VOTING_SYSTEM_SERVER
         public int Voting { get; set; }
         public int User { get; set; }
     }
+
+    public class CountVotingResponce
+    {
+        public int Voting { get; set; }
+        public int User { get; set; }
+    }    
 }

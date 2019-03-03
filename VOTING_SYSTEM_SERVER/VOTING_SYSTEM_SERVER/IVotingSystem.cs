@@ -36,6 +36,14 @@ namespace VOTING_SYSTEM_SERVER
         [OperationContract]
         void SetVoiceForCandidate(string data);
 
+        [WebInvoke(Method = "POST", RequestFormat = WebMessageFormat.Json)]
+        [OperationContract]
+        string CreateVoting(string data);
+
+        [WebInvoke(Method = "POST", RequestFormat = WebMessageFormat.Json)]
+        [OperationContract]
+        string GetVoicesCountInVoting(string data);
+
         //[OperationContract]
         //CompositeType GetDataUsingDataContract(CompositeType composite);
 
