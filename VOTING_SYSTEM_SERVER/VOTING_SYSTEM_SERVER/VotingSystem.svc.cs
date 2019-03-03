@@ -117,8 +117,8 @@ namespace VOTING_SYSTEM_SERVER
             {
                 string token = "";
                 User user = JsonConvert.DeserializeObject<User>(userData);
-                User findUser = (User)db.Users.Where(
-                    (a) => a.Name == user.Name && a.Password == user.Password);
+                var findUser = db.Users.Where(
+                    (a) => a.Name == user.Name && a.Password == user.Password).ToList().First();
 
                 if(findUser != null)
                 {
