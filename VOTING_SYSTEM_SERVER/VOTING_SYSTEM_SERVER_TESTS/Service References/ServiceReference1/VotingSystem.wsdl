@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="VotingSystem" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:23690/VotingSystem.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:23690/VotingSystem.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IVotingSystem_GetCandidateInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCandidateInfo" />
+  </wsdl:message>
+  <wsdl:message name="IVotingSystem_GetCandidateInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCandidateInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVotingSystem_GetCandidatesList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCandidatesList" />
+  </wsdl:message>
+  <wsdl:message name="IVotingSystem_GetCandidatesList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCandidatesListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVotingSystem_AddUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddUser" />
+  </wsdl:message>
+  <wsdl:message name="IVotingSystem_AddUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVotingSystem_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IVotingSystem_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVotingSystem_SetVoiceForCandidate_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetVoiceForCandidate" />
+  </wsdl:message>
+  <wsdl:message name="IVotingSystem_SetVoiceForCandidate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetVoiceForCandidateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVotingSystem_CreateVoting_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateVoting" />
+  </wsdl:message>
+  <wsdl:message name="IVotingSystem_CreateVoting_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateVotingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVotingSystem_GetVoicesCountInVoting_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVoicesCountInVoting" />
+  </wsdl:message>
+  <wsdl:message name="IVotingSystem_GetVoicesCountInVoting_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVoicesCountInVotingResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IVotingSystem">
+    <wsdl:operation name="GetCandidateInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVotingSystem/GetCandidateInfo" message="tns:IVotingSystem_GetCandidateInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVotingSystem/GetCandidateInfoResponse" message="tns:IVotingSystem_GetCandidateInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCandidatesList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVotingSystem/GetCandidatesList" message="tns:IVotingSystem_GetCandidatesList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVotingSystem/GetCandidatesListResponse" message="tns:IVotingSystem_GetCandidatesList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVotingSystem/AddUser" message="tns:IVotingSystem_AddUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVotingSystem/AddUserResponse" message="tns:IVotingSystem_AddUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVotingSystem/Login" message="tns:IVotingSystem_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVotingSystem/LoginResponse" message="tns:IVotingSystem_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetVoiceForCandidate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVotingSystem/SetVoiceForCandidate" message="tns:IVotingSystem_SetVoiceForCandidate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVotingSystem/SetVoiceForCandidateResponse" message="tns:IVotingSystem_SetVoiceForCandidate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateVoting">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVotingSystem/CreateVoting" message="tns:IVotingSystem_CreateVoting_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVotingSystem/CreateVotingResponse" message="tns:IVotingSystem_CreateVoting_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVoicesCountInVoting">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVotingSystem/GetVoicesCountInVoting" message="tns:IVotingSystem_GetVoicesCountInVoting_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVotingSystem/GetVoicesCountInVotingResponse" message="tns:IVotingSystem_GetVoicesCountInVoting_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IVotingSystem" type="tns:IVotingSystem">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCandidateInfo">
+      <soap:operation soapAction="http://tempuri.org/IVotingSystem/GetCandidateInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCandidatesList">
+      <soap:operation soapAction="http://tempuri.org/IVotingSystem/GetCandidatesList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUser">
+      <soap:operation soapAction="http://tempuri.org/IVotingSystem/AddUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/IVotingSystem/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetVoiceForCandidate">
+      <soap:operation soapAction="http://tempuri.org/IVotingSystem/SetVoiceForCandidate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateVoting">
+      <soap:operation soapAction="http://tempuri.org/IVotingSystem/CreateVoting" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVoicesCountInVoting">
+      <soap:operation soapAction="http://tempuri.org/IVotingSystem/GetVoicesCountInVoting" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="VotingSystem">
+    <wsdl:port name="BasicHttpBinding_IVotingSystem" binding="tns:BasicHttpBinding_IVotingSystem">
+      <soap:address location="http://localhost:23690/VotingSystem.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

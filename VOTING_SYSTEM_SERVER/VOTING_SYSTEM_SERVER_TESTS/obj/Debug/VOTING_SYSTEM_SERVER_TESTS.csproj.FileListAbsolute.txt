@@ -1,0 +1,7 @@
+C:\Users\Игорь\Desktop\voting_system-master\VOTING_SYSTEM_SERVER\VOTING_SYSTEM_SERVER_TESTS\obj\Debug\VOTING_SYSTEM_SERVER_TESTS.csprojResolveAssemblyReference.cache
+C:\Users\Игорь\Desktop\voting_system-master\VOTING_SYSTEM_SERVER\VOTING_SYSTEM_SERVER_TESTS\bin\Debug\VOTING_SYSTEM_SERVER_TESTS.dll.config
+C:\Users\Игорь\Desktop\voting_system-master\VOTING_SYSTEM_SERVER\VOTING_SYSTEM_SERVER_TESTS\bin\Debug\VOTING_SYSTEM_SERVER_TESTS.dll
+C:\Users\Игорь\Desktop\voting_system-master\VOTING_SYSTEM_SERVER\VOTING_SYSTEM_SERVER_TESTS\bin\Debug\VOTING_SYSTEM_SERVER_TESTS.pdb
+C:\Users\Игорь\Desktop\voting_system-master\VOTING_SYSTEM_SERVER\VOTING_SYSTEM_SERVER_TESTS\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Игорь\Desktop\voting_system-master\VOTING_SYSTEM_SERVER\VOTING_SYSTEM_SERVER_TESTS\obj\Debug\VOTING_SYSTEM_SERVER_TESTS.dll
+C:\Users\Игорь\Desktop\voting_system-master\VOTING_SYSTEM_SERVER\VOTING_SYSTEM_SERVER_TESTS\obj\Debug\VOTING_SYSTEM_SERVER_TESTS.pdb
