@@ -1,0 +1,17 @@
+C:\Users\Игорь\Desktop\voting_system-master\VOTING_SYSTEM_SERVER\VOTING_SYSTEM_SERVER\obj\Debug\VOTING_SYSTEM_SERVER.csprojResolveAssemblyReference.cache
+C:\Users\Игорь\Desktop\voting_system-master\VOTING_SYSTEM_SERVER\VOTING_SYSTEM_SERVER\obj\Debug\VOTING_SYSTEM_SERVER.Properties.Resources.resources
+C:\Users\Игорь\Desktop\voting_system-master\VOTING_SYSTEM_SERVER\VOTING_SYSTEM_SERVER\obj\Debug\VOTING_SYSTEM_SERVER.csproj.GenerateResource.Cache
+C:\Users\Игорь\Desktop\voting_system-master\VOTING_SYSTEM_SERVER\VOTING_SYSTEM_SERVER\bin\VOTING_SYSTEM_SERVER.dll.config
+C:\Users\Игорь\Desktop\voting_system-master\VOTING_SYSTEM_SERVER\VOTING_SYSTEM_SERVER\bin\VOTING_SYSTEM_SERVER.dll
+C:\Users\Игорь\Desktop\voting_system-master\VOTING_SYSTEM_SERVER\VOTING_SYSTEM_SERVER\bin\VOTING_SYSTEM_SERVER.pdb
+C:\Users\Игорь\Desktop\voting_system-master\VOTING_SYSTEM_SERVER\VOTING_SYSTEM_SERVER\bin\EntityFramework.dll
+C:\Users\Игорь\Desktop\voting_system-master\VOTING_SYSTEM_SERVER\VOTING_SYSTEM_SERVER\bin\EntityFramework.SqlServer.dll
+C:\Users\Игорь\Desktop\voting_system-master\VOTING_SYSTEM_SERVER\VOTING_SYSTEM_SERVER\bin\Newtonsoft.Json.dll
+C:\Users\Игорь\Desktop\voting_system-master\VOTING_SYSTEM_SERVER\VOTING_SYSTEM_SERVER\bin\EntityFramework.xml
+C:\Users\Игорь\Desktop\voting_system-master\VOTING_SYSTEM_SERVER\VOTING_SYSTEM_SERVER\bin\EntityFramework.SqlServer.xml
+C:\Users\Игорь\Desktop\voting_system-master\VOTING_SYSTEM_SERVER\VOTING_SYSTEM_SERVER\bin\Newtonsoft.Json.xml
+C:\Users\Игорь\Desktop\voting_system-master\VOTING_SYSTEM_SERVER\VOTING_SYSTEM_SERVER\bin\ru\EntityFramework.resources.dll
+C:\Users\Игорь\Desktop\voting_system-master\VOTING_SYSTEM_SERVER\VOTING_SYSTEM_SERVER\bin\ru\EntityFramework.SqlServer.resources.dll
+C:\Users\Игорь\Desktop\voting_system-master\VOTING_SYSTEM_SERVER\VOTING_SYSTEM_SERVER\obj\Debug\VOTING_SYSTEM_SERVER.dll
+C:\Users\Игорь\Desktop\voting_system-master\VOTING_SYSTEM_SERVER\VOTING_SYSTEM_SERVER\obj\Debug\VOTING_SYSTEM_SERVER.pdb
+C:\Users\Игорь\Desktop\voting_system-master\VOTING_SYSTEM_SERVER\VOTING_SYSTEM_SERVER\bin\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
