@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9c868417888f41a7bbdc702972e320af" Name="Diagram1">
+        <EntityTypeShape EntityType="voiting_systemModel.bulletin" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="voiting_systemModel.candidate" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="voiting_systemModel.candidate_voiting" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="voiting_systemModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="voiting_systemModel.users" Width="1.5" PointX="3.125" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="voiting_systemModel.voiting" Width="1.5" PointX="0.875" PointY="4.25" IsExpanded="true" />
+        <AssociationConnector Association="voiting_systemModel.FK_bulletin_candidate_voiting" ManuallyRouted="false" />
+        <AssociationConnector Association="voiting_systemModel.FK_bulletin_users" ManuallyRouted="false" />
+        <AssociationConnector Association="voiting_systemModel.FK_candidate_voiting_candidate" ManuallyRouted="false" />
+        <AssociationConnector Association="voiting_systemModel.FK_candidate_voiting_voiting" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

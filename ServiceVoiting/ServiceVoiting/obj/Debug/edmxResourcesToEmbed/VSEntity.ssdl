@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="voiting_systemModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="bulletin">
+    <Key>
+      <PropertyRef Name="id_bulletin" />
+    </Key>
+    <Property Name="id_bulletin" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="candidate_voiting_id" Type="int" Nullable="false" />
+    <Property Name="vote" Type="bit" Nullable="false" />
+    <Property Name="user_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="candidate">
+    <Key>
+      <PropertyRef Name="id_candidate" />
+    </Key>
+    <Property Name="id_candidate" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fio" Type="text" Nullable="false" />
+    <Property Name="birthday" Type="date" Nullable="false" />
+    <Property Name="employment" Type="text" Nullable="false" />
+    <Property Name="programm" Type="text" Nullable="false" />
+    <Property Name="photo_candidate" Type="image" />
+  </EntityType>
+  <EntityType Name="candidate_voiting">
+    <Key>
+      <PropertyRef Name="id_candidate_voiting" />
+    </Key>
+    <Property Name="id_candidate_voiting" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="candidate_id" Type="int" Nullable="false" />
+    <Property Name="voiting_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="id_user" />
+    </Key>
+    <Property Name="id_user" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="login" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="fio" Type="text" Nullable="false" />
+    <Property Name="birthday" Type="date" Nullable="false" />
+    <Property Name="seria_number" Type="int" Nullable="false" />
+    <Property Name="who_gives" Type="text" Nullable="false" />
+    <Property Name="when_gives" Type="date" Nullable="false" />
+    <Property Name="is_admin" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="voiting">
+    <Key>
+      <PropertyRef Name="id_voiting" />
+    </Key>
+    <Property Name="id_voiting" Type="int" Nullable="false" />
+    <Property Name="name" Type="text" Nullable="false" />
+    <Property Name="information" Type="text" Nullable="false" />
+    <Property Name="start_date" Type="date" Nullable="false" />
+    <Property Name="end_date" Type="date" Nullable="false" />
+    <Property Name="photo_voiting" Type="image" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_bulletin_candidate_voiting">
+    <End Role="candidate_voiting" Type="Self.candidate_voiting" Multiplicity="1" />
+    <End Role="bulletin" Type="Self.bulletin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="candidate_voiting">
+        <PropertyRef Name="id_candidate_voiting" />
+      </Principal>
+      <Dependent Role="bulletin">
+        <PropertyRef Name="candidate_voiting_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_bulletin_users">
+    <End Role="users" Type="Self.users" Multiplicity="1" />
+    <End Role="bulletin" Type="Self.bulletin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="id_user" />
+      </Principal>
+      <Dependent Role="bulletin">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_candidate_voiting_candidate">
+    <End Role="candidate" Type="Self.candidate" Multiplicity="1" />
+    <End Role="candidate_voiting" Type="Self.candidate_voiting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="candidate">
+        <PropertyRef Name="id_candidate" />
+      </Principal>
+      <Dependent Role="candidate_voiting">
+        <PropertyRef Name="candidate_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_candidate_voiting_voiting">
+    <End Role="voiting" Type="Self.voiting" Multiplicity="1" />
+    <End Role="candidate_voiting" Type="Self.candidate_voiting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="voiting">
+        <PropertyRef Name="id_voiting" />
+      </Principal>
+      <Dependent Role="candidate_voiting">
+        <PropertyRef Name="voiting_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="voiting_systemModelStoreContainer">
+    <EntitySet Name="bulletin" EntityType="Self.bulletin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="candidate" EntityType="Self.candidate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="candidate_voiting" EntityType="Self.candidate_voiting" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="voiting" EntityType="Self.voiting" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_bulletin_candidate_voiting" Association="Self.FK_bulletin_candidate_voiting">
+      <End Role="candidate_voiting" EntitySet="candidate_voiting" />
+      <End Role="bulletin" EntitySet="bulletin" />
+    </AssociationSet>
+    <AssociationSet Name="FK_bulletin_users" Association="Self.FK_bulletin_users">
+      <End Role="users" EntitySet="users" />
+      <End Role="bulletin" EntitySet="bulletin" />
+    </AssociationSet>
+    <AssociationSet Name="FK_candidate_voiting_candidate" Association="Self.FK_candidate_voiting_candidate">
+      <End Role="candidate" EntitySet="candidate" />
+      <End Role="candidate_voiting" EntitySet="candidate_voiting" />
+    </AssociationSet>
+    <AssociationSet Name="FK_candidate_voiting_voiting" Association="Self.FK_candidate_voiting_voiting">
+      <End Role="voiting" EntitySet="voiting" />
+      <End Role="candidate_voiting" EntitySet="candidate_voiting" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b899ef6b-db1f-4c6c-b74a-2d77ef8eebc6" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:23690/VotingSystem.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="VotingSystem.xsd" MetadataType="Schema" ID="60ec97dd-5247-4f6c-a920-b5db7da964df" SourceId="1" SourceUrl="http://localhost:23690/VotingSystem.svc?xsd=xsd1" />
+    <MetadataFile FileName="VotingSystem.wsdl" MetadataType="Wsdl" ID="6653f504-892c-4d9a-a3f8-8d99c4fa33b4" SourceId="1" SourceUrl="http://localhost:23690/VotingSystem.svc?wsdl" />
+    <MetadataFile FileName="VotingSystem1.xsd" MetadataType="Schema" ID="689bf852-56f2-4256-ab27-38654b953c12" SourceId="1" SourceUrl="http://localhost:23690/VotingSystem.svc?xsd=xsd0" />
+    <MetadataFile FileName="VotingSystem.disco" MetadataType="Disco" ID="45baba66-a932-4d50-a096-d9facdac28ac" SourceId="1" SourceUrl="http://localhost:23690/VotingSystem.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

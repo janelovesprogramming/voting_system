@@ -1,0 +1,9 @@
+C:\Users\Игорь\Desktop\voting_system\Voiting_System_App\Voiting_System_App\bin\Debug\Voiting_System_App.exe.config
+C:\Users\Игорь\Desktop\voting_system\Voiting_System_App\Voiting_System_App\bin\Debug\Voiting_System_App.exe
+C:\Users\Игорь\Desktop\voting_system\Voiting_System_App\Voiting_System_App\bin\Debug\Voiting_System_App.pdb
+C:\Users\Игорь\Desktop\voting_system\Voiting_System_App\Voiting_System_App\obj\Debug\Voiting_System_App.csprojResolveAssemblyReference.cache
+C:\Users\Игорь\Desktop\voting_system\Voiting_System_App\Voiting_System_App\obj\Debug\Voiting_System_App.Form1.resources
+C:\Users\Игорь\Desktop\voting_system\Voiting_System_App\Voiting_System_App\obj\Debug\Voiting_System_App.Properties.Resources.resources
+C:\Users\Игорь\Desktop\voting_system\Voiting_System_App\Voiting_System_App\obj\Debug\Voiting_System_App.csproj.GenerateResource.Cache
+C:\Users\Игорь\Desktop\voting_system\Voiting_System_App\Voiting_System_App\obj\Debug\Voiting_System_App.exe
+C:\Users\Игорь\Desktop\voting_system\Voiting_System_App\Voiting_System_App\obj\Debug\Voiting_System_App.pdb

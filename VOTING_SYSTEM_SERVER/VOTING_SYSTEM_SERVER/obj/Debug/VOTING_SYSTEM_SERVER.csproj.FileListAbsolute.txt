@@ -15,3 +15,8 @@ C:\Users\Игорь\Desktop\voting_system-master\VOTING_SYSTEM_SERVER\VOTING_SYS
 C:\Users\Игорь\Desktop\voting_system-master\VOTING_SYSTEM_SERVER\VOTING_SYSTEM_SERVER\obj\Debug\VOTING_SYSTEM_SERVER.dll
 C:\Users\Игорь\Desktop\voting_system-master\VOTING_SYSTEM_SERVER\VOTING_SYSTEM_SERVER\obj\Debug\VOTING_SYSTEM_SERVER.pdb
 C:\Users\Игорь\Desktop\voting_system-master\VOTING_SYSTEM_SERVER\VOTING_SYSTEM_SERVER\bin\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Игорь\Desktop\voting_system\VOTING_SYSTEM_SERVER\VOTING_SYSTEM_SERVER\obj\Debug\VOTING_SYSTEM_SERVER.csprojResolveAssemblyReference.cache
+C:\Users\Игорь\Desktop\voting_system\VOTING_SYSTEM_SERVER\VOTING_SYSTEM_SERVER\obj\Debug\VOTING_SYSTEM_SERVER.Properties.Resources.resources
+C:\Users\Игорь\Desktop\voting_system\VOTING_SYSTEM_SERVER\VOTING_SYSTEM_SERVER\obj\Debug\VOTING_SYSTEM_SERVER.csproj.GenerateResource.Cache
+C:\Users\Игорь\Desktop\voting_system\VOTING_SYSTEM_SERVER\VOTING_SYSTEM_SERVER\obj\Debug\VOTING_SYSTEM_SERVER.dll
+C:\Users\Игорь\Desktop\voting_system\VOTING_SYSTEM_SERVER\VOTING_SYSTEM_SERVER\obj\Debug\VOTING_SYSTEM_SERVER.pdb

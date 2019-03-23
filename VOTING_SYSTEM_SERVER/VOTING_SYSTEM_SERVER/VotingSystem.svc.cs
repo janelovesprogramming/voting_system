@@ -213,6 +213,14 @@ namespace VOTING_SYSTEM_SERVER
         //    return composite;
         //}
     }
+    
+    
+    public class Auth
+    {
+        public bool error;
+        public string error_message;
+        public int id_user;
+    }
 
     public class SetVoiceResponce
     {

@@ -15,6 +15,8 @@ namespace VOTING_SYSTEM_SERVER
         //[WebGet(UriTemplate = "/{value}")]
         //[OperationContract]
         //string GetData(int value);
+        [OperationContract]
+        Auth Authorisation(string Login, string Password);
 
         [WebGet(UriTemplate = "/candidate/{id}")]
         [OperationContract]
