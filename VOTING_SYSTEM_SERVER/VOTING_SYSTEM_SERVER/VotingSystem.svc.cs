@@ -84,29 +84,36 @@ namespace VOTING_SYSTEM_SERVER
             }
         }
 
-        public string GetVoicesCountInVoting(string data)
+        public string GetVoicesCountInVoting(string data, string token)
         {
             //TODO: Возможно, будет метод который делает голосование открытым или закрытым
             using (voting_systemEntities db = new voting_systemEntities())
             {
-                var Candidate_Voting = db.Candidate_Voting;
-                CountVotingResponce parseData = JsonConvert.DeserializeObject<CountVotingResponce>(data);
-                int idVoting = parseData.Voting;
-                Bulletin Bulletin;
-                int count = 0;
-
-                var Candidate_VotingList = Candidate_Voting.Where((a) => a.Voting_ID == idVoting);
-
-                foreach(Candidate_Voting candidate_voting in Candidate_VotingList)
+                if (UserValidate(token))
                 {
-                    Bulletin = (Bulletin)db.Bulletins.Where((a) => a.Candidate_Voting == candidate_voting);
-                    if (Bulletin.Vote != 0)
+                    var Candidate_Voting = db.Candidate_Voting;
+                    CountVotingResponce parseData = JsonConvert.DeserializeObject<CountVotingResponce>(data);
+                    int idVoting = parseData.Voting;
+                    Bulletin Bulletin;
+                    int count = 0;
+
+                    var Candidate_VotingList = Candidate_Voting.Where((a) => a.Voting_ID == idVoting);
+
+                    if (Candidate_VotingList.Count() != 0)
                     {
-                        count++;
+                        foreach (Candidate_Voting candidate_voting in Candidate_VotingList)
+                        {
+                            Bulletin = (Bulletin)db.Bulletins.Where((a) => a.Candidate_Voting == candidate_voting);
+                            if (Bulletin.Vote != 0)
+                            {
+                                count++;
+                            }
+                        }
+
+                        return JsonConvert.SerializeObject(new { Voices = count });
                     }
                 }
-
-                return "" + count;
+                return JsonConvert.SerializeObject(new { error = "Ошибка!" });
             }
             
         }
@@ -117,20 +124,29 @@ namespace VOTING_SYSTEM_SERVER
             {
                 string token = "";
                 User user = JsonConvert.DeserializeObject<User>(userData);
-                var findUser = db.Users.Where(
-                    (a) => a.Name == user.Name && a.Password == user.Password).ToList().First();
+                User findUser = null;
 
-                if(findUser != null)
+                
+                var findUserList = db.Users.Where(
+                    (a) => a.Name == user.Name && a.Password == user.Password).ToList();
+
+
+                if (findUserList.Count != 0)
                 {
-                    using (MD5 md5 = MD5.Create())
+                    findUser = findUserList.First();
+
+                    if (findUser != null)
                     {
-                        token = GetMd5Hash(md5, findUser.Name + findUser.Password + CreateRandomString(4));
-                    }
+                        using (MD5 md5 = MD5.Create())
+                        {
+                            token = GetMd5Hash(md5, findUser.Name + findUser.Password + CreateRandomString(4));
+                        }
 
-                    findUser.Token = token;
-                    db.SaveChanges();
+                        findUser.Token = token;
+                        db.SaveChanges();
 
-                    return token;
+                        return token;
+                    }                    
                 }
 
                 return null;
@@ -212,6 +228,17 @@ namespace VOTING_SYSTEM_SERVER
         //    }
         //    return composite;
         //}
+
+        private bool UserValidate(string token)
+        {
+            using (voting_systemEntities db = new voting_systemEntities())
+            {
+                var users = db.Users;
+                List<User> listUsers = users.Where((a) => a.Token == token).ToList();
+
+                return listUsers.Count != 0;
+            }
+        }
     }
 
     public class SetVoiceResponce

@@ -42,7 +42,7 @@ namespace VOTING_SYSTEM_SERVER
 
         [WebInvoke(Method = "POST", RequestFormat = WebMessageFormat.Json)]
         [OperationContract]
-        string GetVoicesCountInVoting(string data);
+        string GetVoicesCountInVoting(string data, string token);
 
         //[OperationContract]
         //CompositeType GetDataUsingDataContract(CompositeType composite);
